@@ -1,0 +1,47 @@
+package Stack;
+
+public class intLinkedStack implements intStack {
+
+	public class Element
+	{
+		int data;
+		Element next;
+	
+	}
+	private Element top;
+	@Override
+	public boolean isEmpty() {
+		if(top==null)return false;
+		else return true;
+	}
+
+	@Override
+	public int top() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void push(int inhalt) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int pop() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isFull() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

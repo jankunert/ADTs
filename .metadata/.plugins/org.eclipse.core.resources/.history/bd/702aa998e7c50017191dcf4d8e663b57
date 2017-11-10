@@ -1,0 +1,81 @@
+package Stack;
+public class Bahnhof
+{
+	private intStack gleisA;
+	private intStack gleisB;
+	private intStack gleisC;
+	
+	
+	public Bahnhof()
+	{
+		gleisA = new intArrayStack();
+		gleisB = new intArrayStack();
+		gleisC = new intArrayStack();
+		
+		
+		gleisA.push(13);
+		gleisA.push(4);
+		gleisA.push(55);
+		gleisA.push(10);
+		gleisA.push(11);
+		gleisA.push(23);
+		
+		
+	}
+	public void sortieren1()
+	{
+		gleisC.push(gleisA.top());
+		while(!gleisA.isEmpty())
+		{
+			if(!gleisC.isEmpty() && gleisA.top()<gleisC.top())
+			{
+				while(!gleisC.isEmpty() && gleisC.top()>gleisA.top())
+				{
+					gleisB.push(gleisC.pop());
+				}
+				gleisC.push(gleisA.pop());
+				while(!gleisB.isEmpty())
+				{
+					gleisC.push(gleisB.pop());
+				}
+			}
+			else
+			{
+				gleisC.push(gleisA.pop());
+			}
+		}
+		System.out.println("Der Bahnhof has been sorted und ist jetzt fly af!");
+	}
+	
+	public void sortieren2()
+	{
+		gleisC.push(gleisA.pop());
+		while(!gleisA.isEmpty())
+		{
+			if(!gleisC.isEmpty() && gleisA.top()<gleisC.top())
+			{
+				gleisB.push(gleisA.pop());
+				while(gleisC.top()>gleisB.top())
+				{
+					gleisA.push(gleisC.pop());
+				}
+				gleisC.push(gleisB.pop());
+			}
+			else
+			{
+				gleisC.push(gleisA.pop());
+			}
+		}
+		System.out.println("Der Bahnhof has been sorted und ist jetzt fly af!");
+	}
+	
+	
+	public static void main(String[] args)
+	{
+		Bahnhof bhf = new Bahnhof();
+		bhf.sortieren1();
+		System.out.println(bhf.gleisC );
+		System.out.println("Das Sortieren scheint fehlgeschlagen zu sein");
+		
+	}
+}

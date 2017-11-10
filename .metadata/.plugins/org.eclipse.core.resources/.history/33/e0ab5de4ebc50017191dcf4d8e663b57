@@ -1,0 +1,10 @@
+package Stack;
+
+public interface intStack {
+	 boolean isEmpty();
+	 int datenAnStelle();
+	 int top();
+	 void push(int inhalt);
+	 int pop();
+	 boolean isFull();
+}
